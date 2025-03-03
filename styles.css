@@ -25,11 +25,219 @@ h1 {
     50% { border-color: transparent; }
 }
 
-/* Efek Fade-in */
-.fade-in {
-    opacity: 0; /* Awalnya tidak terlihat */
-    transform: translateY(20px); /* Geser sedikit ke bawah */
-    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+/* Efek Fade-in Loop */
+@keyframes fadeMirror {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 }
 
+.fade-loop {
+    opacity: 0;
+    animation: fadeMirror 10s ease-in-out infinite alternate;
+}
+
+/* Import Font Google */
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+/* Styling Umum */
+body {
+    font-family: 'Lexend', sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.mindmap-section {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #A31D1D;
+    margin-bottom: 40px;
+}
+
+/* Container Mindmap */
+.mindmap-container {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Garis Tengah */
+.mindmap-line {
+    position: absolute;
+    width: 5px;
+    background: #A31D1D;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Item Mindmap */
+.mindmap-item {
+    position: relative;
+    width: 50%;
+    padding: 10px 40px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+/* Kotak Mindmap */
+.mindmap-box {
+    background: white;
+    padding: 25px;
+    border-radius: 30px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    border: 3px solid #A31D1D;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    max-width: 340px;
+}
+
+/* Kiri */
+.left {
+    left: 0;
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.left .mindmap-box {
+    margin-right: 30px;
+}
+
+/* Kanan */
+.right {
+    left: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.right .mindmap-box {
+    margin-left: 30px;
+}
+
+/* Efek Animasi */
+.fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animasi Teks */
+.mindmap-box h3, .mindmap-box p {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.6s ease-in-out;
+}
+
+.fade.visible .mindmap-box h3,
+.fade.visible .mindmap-box p {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .mindmap-line {
+        left: 20px;
+    }
+
+    .mindmap-item {
+        width: 100%;
+        padding-left: 50px;
+        text-align: left;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .left, .right {
+        left: 0;
+    }
+
+    .right .mindmap-box, .left .mindmap-box {
+        margin: 10px 0;
+        max-width: 100%;
+    }
+}
+
+.education-title {
+    font-family: 'Lexend', sans-serif;
+    font-size: 2.5rem; /* Ukuran lebih kecil agar lebih proporsional */
+    font-weight: bold;
+    color: #A31D1D; /* Warna merah */
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlide 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.button-group {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn {
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.visit-site {
+    background-color: #A31D1D;
+    color: white;
+    border: 2px solid #A31D1D;
+}
+
+.visit-site:hover {
+    background-color: white;
+    color: #A31D1D;
+}
+
+.more-info {
+    background-color: white;
+    color: #A31D1D;
+    border: 2px solid #A31D1D;
+}
+
+.more-info:hover {
+    background-color: #A31D1D;
+    color: white;
+}
 

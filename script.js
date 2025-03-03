@@ -46,12 +46,40 @@ document.addEventListener("DOMContentLoaded", function () {
 // Navigasi Desktop
 
 document.addEventListener("DOMContentLoaded", function () {
-    const title = document.getElementById("fade-title");
+    const items = document.querySelectorAll(".fade");
 
-    setTimeout(() => {
-        title.style.opacity = "1";
-        title.style.transform = "translateY(0)";
-    }, 500); // Delay 0.5 detik sebelum muncul
+    function checkScroll() {
+        const triggerBottom = window.innerHeight * 0.9;
+
+        items.forEach(item => {
+            const itemTop = item.getBoundingClientRect().top;
+
+            if (itemTop < triggerBottom) {
+                item.classList.add("visible");
+            } else {
+                item.classList.remove("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+    checkScroll();
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".more-info");
+
+    buttons.forEach((button) => {
+        button.addEventListener("click", function () {
+            alert("Informasi lebih lanjut akan segera tersedia!");
+        });
+    });
+});
+
+
+
+
+
+
 
 
