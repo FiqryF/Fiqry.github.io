@@ -25,4 +25,11 @@ h1 {
     50% { border-color: transparent; }
 }
 
+/* Efek Fade-in */
+.fade-in {
+    opacity: 0; /* Awalnya tidak terlihat */
+    transform: translateY(20px); /* Geser sedikit ke bawah */
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
 

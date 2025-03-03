@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     menuItems.forEach((item) => {
         item.addEventListener("mouseenter", () => {
-            item.style.backgroundColor = "#0284c7"; // Warna biru
+            item.style.backgroundColor = "#A31D1D"; // Warna merah
             item.style.color = "white"; // Warna teks putih
             item.style.transform = "scale(1.05)"; // Efek sedikit membesar
             item.style.transition = "all 0.3s ease"; // Efek smooth
@@ -34,14 +34,24 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         item.addEventListener("click", () => {
-            item.style.backgroundColor = "#065f46"; // Warna hijau gelap saat diklik
+            item.style.backgroundColor = "#650F0F"; // Warna merah gelap saat diklik
             item.style.transition = "all 0.2s ease";
             setTimeout(() => {
-                item.style.backgroundColor = "#0284c7"; // Kembali ke warna hover
+                item.style.backgroundColor = "#A31D1D"; // Kembali ke warna hover
             }, 300); // Efek sementara saat diklik
         });
     });
 });
+
 // Navigasi Desktop
+
+document.addEventListener("DOMContentLoaded", function () {
+    const title = document.getElementById("fade-title");
+
+    setTimeout(() => {
+        title.style.opacity = "1";
+        title.style.transform = "translateY(0)";
+    }, 500); // Delay 0.5 detik sebelum muncul
+});
 
 
