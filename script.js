@@ -79,16 +79,27 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menu-toggle");
     const mobileMenu = document.getElementById("mobile-menu");
+    const header = document.querySelector("header");
 
+    // Toggle Mobile Menu
     menuToggle.addEventListener("click", function (event) {
         event.stopPropagation(); // Mencegah event bubbling
-        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("active");
     });
 
-    // Menutup menu jika klik di luar menu
+    // Menutup menu jika klik di luar
     document.addEventListener("click", function (event) {
         if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
-            mobileMenu.classList.add("hidden");
+            mobileMenu.classList.remove("active");
+        }
+    });
+
+    // Sticky Header saat Scroll
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+            header.classList.add("scrolled");
+        } else {
+            header.classList.remove("scrolled");
         }
     });
 });
