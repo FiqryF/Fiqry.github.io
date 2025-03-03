@@ -76,6 +76,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle.addEventListener("click", function (event) {
+        event.stopPropagation(); // Mencegah event bubbling
+        mobileMenu.classList.toggle("hidden");
+    });
+
+    // Menutup menu jika klik di luar menu
+    document.addEventListener("click", function (event) {
+        if (!menuToggle.contains(event.target) && !mobileMenu.contains(event.target)) {
+            mobileMenu.classList.add("hidden");
+        }
+    });
+});
+
 
 
 
