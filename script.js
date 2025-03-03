@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // Navigasi Mobile
 
-
 // Navigasi Desktop
 document.addEventListener("DOMContentLoaded", function () {
     let menuItems = document.querySelectorAll(".menu-item");
@@ -43,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
 // Navigasi Desktop
 
 
