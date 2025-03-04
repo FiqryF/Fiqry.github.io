@@ -125,3 +125,48 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const projectItems = document.querySelectorAll(".latest-project-item");
+
+    const observerOptions = {
+        root: null, // Menggunakan viewport sebagai root
+        threshold: 0.2, // Akan memicu ketika 20% elemen terlihat
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("fade-in");
+            } else {
+                entry.target.classList.remove("fade-in"); // Hapus class saat keluar viewport
+            }
+        });
+    }, observerOptions);
+
+    projectItems.forEach((item) => {
+        observer.observe(item);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const projectItems = document.querySelectorAll(".latest-project-item");
+
+    const observerOptions = {
+        root: null, // Menggunakan viewport sebagai root
+        threshold: 0.5, // 50% elemen harus terlihat
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active-animation"); // Tambahkan animasi saat masuk viewport
+            } else {
+                entry.target.classList.remove("active-animation"); // Hapus animasi saat keluar
+            }
+        });
+    }, observerOptions);
+
+    projectItems.forEach((item) => {
+        observer.observe(item);
+    });
+});
