@@ -1005,3 +1005,347 @@ body {
                     0 0 25px rgba(163, 29, 29, 0.3);
     }
 }
+
+/* General Style */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.title {
+    font-size: 28px;
+    margin-top: 20px;
+}
+
+/* Section Title */
+.skills-section {
+    margin: 20px;
+}
+
+h3 {
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* Unlocked Skills */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.skill-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 8px;
+    width: 250px;
+    justify-content: space-between;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+.skill-box img {
+    width: 30px;
+    height: 30px;
+}
+
+.progress-bar {
+    width: 80px;
+    height: 12px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: darkred;
+    transition: width 1.5s ease-in-out;
+}
+
+.percentage {
+    font-size: 12px;
+}
+
+/* Locked Skills */
+.locked-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.locked-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 2px solid black;
+    padding: 8px 15px;
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+    cursor: not-allowed;
+    transition: 0.3s;
+}
+
+.locked-box img {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+/* Hover Effect */
+.skill-box:hover, .locked-box:hover {
+    transform: scale(1.05);
+}
+
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+}
+
+/* Section Container */
+.skills-section {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Unlocked & Locked Skills Container */
+.skills-container, .locked-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background: white;
+}
+
+.skill-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Memisahkan elemen */
+    gap: 10px; /* Menambahkan jarak antar elemen */
+    background: white;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Title Inside Each Box */
+.box-title {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    background: white;
+    padding: 3px 5px;
+    border-radius: 5px;
+    color: darkred;
+    border: 1px solid darkred;
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 80px;
+    height: 12px;
+    background: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 20%; /* Sesuai dengan persentase */
+    background: darkred;
+    transition: width 1.5s ease-in-out;
+}
+
+.percentage {
+    font-size: 12px;
+}
+
+/* Hover Effect */
+.skill-box:hover, .locked-box:hover {
+    transform: scale(1.05);
+}
+
+/* Pastikan tidak ada garis bawah */
+h2, h3 {
+    border-bottom: none !important;
+    text-decoration: none !important;
+}
+
+/* Jika garis bawah berasal dari elemen tambahan seperti <hr>, sembunyikan */
+.skills-section hr {
+    display: none !important;
+}
+
+/* Jika garis bawah muncul dari pseudo-element (::after atau ::before), hapus */
+h1::after, h3::after {
+    content: none !important;
+}
+
+/* Locked Skills Box - Pastikan kontennya di tengah */
+.locked-box {
+    display: flex;
+    align-items: center;  /* Pusatkan secara vertikal */
+    justify-content: center; /* Pusatkan secara horizontal */
+    text-align: center; /* Pastikan teks di tengah */
+    width: 250px; /* Sesuaikan ukuran */
+    height: 50px; /* Sesuaikan tinggi */
+}
+
+/* Ikon dan teks dalam locked-box */
+.locked-box img {
+    margin-right: 8px; /* Beri sedikit jarak antara ikon dan teks */
+}
+
+/* Mengubah font untuk seluruh halaman */
+body {
+    font-family: 'Lexend', sans-serif;
+}
+
+/* Memperbesar ukuran teks SKILLS */
+.title {
+    font-size: 42px; /* Sesuaikan ukuran */
+    font-weight: bold;
+}
+
+@keyframes shine {
+    0% {
+        background: linear-gradient(90deg, darkred 0%, red 50%, darkred 100%);
+        background-size: 200% 100%;
+        background-position: -100% 0;
+    }
+    100% {
+        background-position: 100% 0;
+    }
+}
+
+.progress {
+    height: 100%;
+    width: 20%;
+    background: darkred;
+    animation: shine 2s infinite linear;
+}
+
+@keyframes borderShine {
+    0% {
+        box-shadow: 0 0 2px rgba(255, 0, 0, 0.2);
+        border-color: rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+        border-color: rgba(255, 0, 0, 0.7);
+    }
+    100% {
+        box-shadow: 0 0 2px rgba(255, 0, 0, 0.2);
+        border-color: rgba(255, 0, 0, 0.5);
+    }
+}
+
+.skill-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    border: 2px solid rgba(255, 0, 0, 0.5); /* Warna merah lebih lembut */
+    padding: 10px;
+    border-radius: 8px;
+    width: 250px;
+    justify-content: space-between;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+    animation: borderShine 2s infinite alternate ease-in-out;
+}
+
+@keyframes borderGlow {
+    0% {
+        background-position: 200% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.skill-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    width: 250px;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efek Border Berkilau Abu-Abu */
+.skill-box::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(128, 128, 128, 0) 0%, rgba(128, 128, 128, 1) 50%, rgba(128, 128, 128, 0) 100%);
+    background-size: 200% 100%;
+    animation: borderGlow 2s linear infinite;
+    z-index: -1;
+}
+
+@keyframes greyBorderGlow {
+    0% {
+        background-position: 200% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.locked-box {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    width: 250px;
+    justify-content: center; /* Agar teks di tengah */
+    position: relative;
+    overflow: hidden;
+    border: 3px solid black; /* Garis tepi hitam statis */
+}
+
+/* Efek Border Berkilau Abu-Abu */
+.locked-box::before {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(128, 128, 128, 0) 0%, rgba(128, 128, 128, 1) 50%, rgba(128, 128, 128, 0) 100%);
+    background-size: 200% 100%;
+    animation: greyBorderGlow 3s linear infinite;
+    z-index: 1; /* Pastikan efek ada di atas border hitam */
+    pointer-events: none; /* Supaya efek tidak mengganggu interaksi */
+}

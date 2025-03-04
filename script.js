@@ -170,3 +170,24 @@ document.addEventListener("DOMContentLoaded", function () {
         observer.observe(item);
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const progressBars = document.querySelectorAll(".progress");
+
+    progressBars.forEach(bar => {
+        let progressValue = bar.getAttribute("data-progress");
+        bar.style.width = progressValue + "%";
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    let progressBars = document.querySelectorAll(".progress");
+
+    progressBars.forEach(bar => {
+        setInterval(() => {
+            bar.style.background = "linear-gradient(90deg, darkred 0%, red 50%, darkred 100%)";
+            bar.style.backgroundSize = "200% 100%";
+            bar.style.animation = "shine 2s infinite linear";
+        }, 2000);
+    });
+});
