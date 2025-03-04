@@ -1331,7 +1331,7 @@ body {
     justify-content: center; /* Agar teks di tengah */
     position: relative;
     overflow: hidden;
-    border: 3px solid black; /* Garis tepi hitam statis */
+    border: 3px solid transparent; /* Supaya tetap ada border */
 }
 
 /* Efek Border Berkilau Abu-Abu */
@@ -1343,9 +1343,120 @@ body {
     right: -3px;
     bottom: -3px;
     border-radius: 8px;
+    padding: 3px;
     background: linear-gradient(90deg, rgba(128, 128, 128, 0) 0%, rgba(128, 128, 128, 1) 50%, rgba(128, 128, 128, 0) 100%);
     background-size: 200% 100%;
     animation: greyBorderGlow 3s linear infinite;
-    z-index: 1; /* Pastikan efek ada di atas border hitam */
-    pointer-events: none; /* Supaya efek tidak mengganggu interaksi */
+    z-index: -1;
 }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.floating-container {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.floating-button {
+    width: 55px;
+    height: 55px;
+    background-color: #8B0000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.floating-button:hover {
+    background-color: #a00000;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.floating-button.open {
+    background-color: #600000;
+}
+
+.floating-button .icon {
+    transition: transform 0.3s ease;
+}
+
+.floating-button.open .icon {
+    transform: rotate(45deg);
+    content: "×";
+}
+
+.options {
+    position: relative;
+    opacity: 0;
+    transform: scale(0);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.options.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.option {
+    text-decoration: none;
+    background: white;
+    color: #333;
+    padding: 10px 18px;
+    border: 2px solid black;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    position: absolute;
+}
+
+.option:hover {
+    background-color: #8B0000;
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Posisi menu About */
+.about {
+    bottom: 60px;
+    right: 10px;
+}
+
+/* Posisi menu Contact */
+.contact {
+    bottom: 10px;
+    right: 70px;
+}
+
+/* Geser opsi lebih dekat ke tombol floating */
+.about {
+    bottom: 60px;
+    right: -35px; /* Sebelumnya 5px, geser lebih ke kanan */
+}
+
+.contact {
+    bottom: 10px;
+    right: 35px; /* Sebelumnya 45px, geser lebih ke kanan */
+}
+

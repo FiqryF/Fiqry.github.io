@@ -191,3 +191,36 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 2000);
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const mainButton = document.getElementById("mainButton");
+    const options = document.getElementById("options");
+    const icon = mainButton.querySelector(".icon");
+
+    mainButton.addEventListener("click", function () {
+        options.classList.toggle("show");
+        mainButton.classList.toggle("open");
+
+        icon.style.transition = "transform 0.3s ease-in-out, opacity 0.2s ease-in-out";
+        
+        if (mainButton.classList.contains("open")) {
+            icon.style.opacity = "0"; // Hilangkan ikon sebentar
+            icon.style.transform = "scale(1.2) rotate(90deg)"; // Perbesar & mulai rotasi
+
+            setTimeout(() => {
+                icon.innerHTML = "×"; // Ubah ke X
+                icon.style.opacity = "1"; // Tampilkan lagi
+                icon.style.transform = "scale(1) rotate(180deg)"; // Normal & rotasi penuh
+            }, 200);
+        } else {
+            icon.style.opacity = "0";
+            icon.style.transform = "scale(1.2) rotate(90deg)"; // Perbesar & mulai rotasi
+
+            setTimeout(() => {
+                icon.innerHTML = "+"; // Ubah kembali ke +
+                icon.style.opacity = "1";
+                icon.style.transform = "scale(1) rotate(0deg)"; // Normal & kembali ke posisi awal
+            }, 200);
+        }
+    });
+});
