@@ -219,3 +219,28 @@ document.addEventListener("DOMContentLoaded", function () {
     // Tambahkan animasi transisi ke opsi
     options.style.transition = "opacity 0.3s ease, transform 0.3s ease";
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const aboutButton = document.querySelector(".about");
+
+    aboutButton.addEventListener("click", function (event) {
+        event.preventDefault(); // Mencegah reload halaman karena <a href="#">
+        showPopup();
+    });
+
+    function showPopup() {
+        const popupOverlay = document.getElementById("popupOverlay");
+        popupOverlay.classList.add("show");
+
+        const closeButton = popupOverlay.querySelector(".close-btn");
+        closeButton.addEventListener("click", function () {
+            popupOverlay.classList.remove("show");
+        });
+
+        popupOverlay.addEventListener("click", function (event) {
+            if (event.target === popupOverlay) {
+                popupOverlay.classList.remove("show");
+            }
+        });
+    }
+});
