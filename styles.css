@@ -1460,3 +1460,10 @@ body {
     right: 35px; /* Sebelumnya 45px, geser lebih ke kanan */
 }
 
+@media (max-width: 768px) {
+    .floating-container {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+

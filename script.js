@@ -195,32 +195,27 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const mainButton = document.getElementById("mainButton");
     const options = document.getElementById("options");
-    const icon = mainButton.querySelector(".icon");
+    
+    let isOpen = false;
+
+    mainButton.style.transition = "transform 0.3s ease";
 
     mainButton.addEventListener("click", function () {
-        options.classList.toggle("show");
-        mainButton.classList.toggle("open");
-
-        icon.style.transition = "transform 0.3s ease-in-out, opacity 0.2s ease-in-out";
+        isOpen = !isOpen;
         
-        if (mainButton.classList.contains("open")) {
-            icon.style.opacity = "0"; // Hilangkan ikon sebentar
-            icon.style.transform = "scale(1.2) rotate(90deg)"; // Perbesar & mulai rotasi
-
-            setTimeout(() => {
-                icon.innerHTML = "×"; // Ubah ke X
-                icon.style.opacity = "1"; // Tampilkan lagi
-                icon.style.transform = "scale(1) rotate(180deg)"; // Normal & rotasi penuh
-            }, 200);
+        if (isOpen) {
+            mainButton.classList.add("open");
+            options.classList.add("show");
+            mainButton.innerHTML = "+"; // Tetap menggunakan '+'
+            mainButton.style.transform = "rotate(45deg)"; // Animasi rotasi
         } else {
-            icon.style.opacity = "0";
-            icon.style.transform = "scale(1.2) rotate(90deg)"; // Perbesar & mulai rotasi
-
-            setTimeout(() => {
-                icon.innerHTML = "+"; // Ubah kembali ke +
-                icon.style.opacity = "1";
-                icon.style.transform = "scale(1) rotate(0deg)"; // Normal & kembali ke posisi awal
-            }, 200);
+            mainButton.classList.remove("open");
+            options.classList.remove("show");
+            mainButton.innerHTML = "+"; // Tetap menggunakan '+'
+            mainButton.style.transform = "rotate(0deg)"; // Kembali ke posisi awal
         }
     });
+
+    // Tambahkan animasi transisi ke opsi
+    options.style.transition = "opacity 0.3s ease, transform 0.3s ease";
 });
