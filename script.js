@@ -246,22 +246,55 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    const openModal = document.getElementById("openModal");
-    const closeModal = document.getElementById("closeModal");
     const modal = document.getElementById("modal");
+    const openModalBtn = document.getElementById("openModal");
+    const closeModalBtn = document.getElementById("closeModal");
 
-    openModal.addEventListener("click", function (event) {
-        event.preventDefault();
-        modal.style.display = "flex";  // Baru muncul pas tombol diklik
+    // Buka modal
+    openModalBtn.addEventListener("click", function () {
+        modal.style.display = "flex";
     });
 
-    closeModal.addEventListener("click", function () {
+    // Tutup modal
+    closeModalBtn.addEventListener("click", function () {
         modal.style.display = "none";
     });
 
-    window.addEventListener("click", function (event) {
-        if (event.target === modal) {
+    // Tutup modal jika klik di luar konten
+    window.addEventListener("click", function (e) {
+        if (e.target === modal) {
             modal.style.display = "none";
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const modal = document.getElementById("modal");
+    modal.style.display = "none"; // Pastikan modal tidak muncul saat pertama kali load
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopBtn = document.getElementById("scrollToTop");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) { 
+            scrollToTopBtn.classList.add("show");
+            scrollToTopBtn.classList.remove("hide"); // Hapus class hide supaya muncul dengan animasi
+        } else {
+            if (scrollToTopBtn.classList.contains("show")) { 
+                scrollToTopBtn.classList.add("hide"); // Tambahin class hide biar animasi keluar jalan
+                setTimeout(() => {
+                    scrollToTopBtn.classList.remove("show"); // Hapus class show setelah animasi selesai
+                }, 400); // Delay harus sama dengan transition CSS
+            }
+        }
+    });
+
+    scrollToTopBtn.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});
+

@@ -20,6 +20,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
     <!--Font Google All-->
 
+    <!-- Tambahkan Font Awesome -->
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
     <title>F Confirm</title>
 </head>
 <body>
@@ -83,7 +88,7 @@
     
           <p class="mt-4 sm:text-xl/relaxed">
             I am a student at the University of Logistics and International Business, 
-            and I am excited to start my journey as a new programmer. Nice to meet you!
+            and I am excited to start my journey as a new frontend developer. Nice to meet you!
           </p>
     
           <div class="mt-8 flex flex-wrap justify-center gap-4">
@@ -96,14 +101,28 @@
     </section>
     <!--Content-->
 
-    <!-- Popup Modal -->
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span id="closeModal" class="close-btn">&times;</span>
-    <h2>About Me</h2>
-    <p>Ini adalah deskripsi tentang saya...</p>
-  </div>
-</div>
+    <button id="scrollToTop" class="scroll-top-btn">
+      <i class="fas fa-chevron-up"></i> 
+  </button>
+  
+ 
+
+    <!-- Popup -->
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-container">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>ABOUT ME</h2>
+            <p>
+                Hi, my name is Fiqry Firmansyah. I am a second-semester student at the 
+                University of Logistics and International Business with ambitions of 
+                becoming a frontend developer. With determination and dedication, I continue 
+                to learn and sharpen my skills in web development. I have created two websites. 
+                My first website is an e-commerce site called SKYWAVE. This website focuses on selling PC accessories and is developed using HTML, TailwindCSS, and PHP. 
+                I use PHP to manage the data needed for the web pages, such as adding, deleting, and updating data. My second website is F CONFIRM, a portfolio website developed using HTML, CSS, and JavaScript. 
+                Apart from coding, I also have hobbies in photography and listening to music. I enjoy taking simple pictures to capture the beautiful moments around me.
+            </p>
+        </div>
+    </div>
     
     <!--Education-->
     <section id="education" class="mindmap-section" style="background-color: #f9f9f9;">

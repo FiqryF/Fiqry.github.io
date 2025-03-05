@@ -1451,12 +1451,12 @@ body {
 
 /* Geser opsi lebih dekat ke tombol floating */
 .about {
-    bottom: 60px;
-    right: -35px; /* Sebelumnya 5px, geser lebih ke kanan */
+    bottom: 27px;
+    right: 35px; /* Sebelumnya 5px, geser lebih ke kanan */
 }
 
 .contact {
-    bottom: 10px;
+    bottom: -24px;
     right: 35px; /* Sebelumnya 45px, geser lebih ke kanan */
 }
 
@@ -1539,42 +1539,192 @@ body {
     background: #871717;
 }
 
-/* Modal Popup */
+/* Style umum */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tombol download */
+.btn-download {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-download:hover {
+    background-color: darkred;
+}
+
+/* Popup */
 .modal {
-    display: none;  /* Awalnya disembunyikan */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    align-items: center;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
-/* Konten dalam modal */
-.modal-content {
+/* Overlay biar background gelap dan nutupin elemen di belakang */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Transparan gelap */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    z-index: 999; /* Pastikan modal ada di atas elemen lain */
+}
+
+/* Kontainer popup */
+.modal-container {
     background: white;
     padding: 20px;
-    width: 350px;
+    width: 60%;
+    max-width: 600px;
+    max-height: 80vh;
     border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: justify;
     position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    z-index: 1000; /* Supaya popup tetap di atas overlay */
 }
 
-/* Tombol Silang */
-.close-btn {
+.modal-container h2 {
+    font-family: 'Lexend', sans-serif;  /* Gunakan font Lexend */
+    font-weight: 700;  /* Bold */
+    font-size: 20px;  /* Ukuran lebih kecil */
+    text-align: center;  /* Tengah */
+    margin-bottom: 10px; /* Jarak bawah biar lebih rapi */
+}
+
+
+/* Tombol close */
+.close {
     position: absolute;
     top: 10px;
     right: 15px;
     font-size: 20px;
-    font-weight: bold;
     cursor: pointer;
-    color: #555;
+    color: red;
 }
 
-.close-btn:hover {
-    color: black;
+/* 🔹 RESPONSIVE untuk Mobile */
+@media screen and (max-width: 768px) {
+    .modal-container {
+        width: 90%;
+        max-height: 70vh; /* Lebih pendek di HP biar lebih nyaman */
+        padding: 15px;
+    }
+
+    .btn-download {
+        width: 80%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .close {
+        font-size: 24px;
+        top: 5px;
+        right: 10px;
+    }
 }
 
+.scroll-top-btn {
+    position: fixed;
+    bottom: 100px; /* Di atas floating button */
+    right: 47px;
+    width: 40px;
+    height: 40px;
+    background-color: #A31D1D;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
+    z-index: 1000; /* Pastikan lebih tinggi dari elemen lain */
+}
+
+.scroll-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top-btn.hide {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 0.4s ease, opacity 0.4s ease, visibility 0.4s;
+}
+
+.scroll-top-btn:hover {
+    background-color: #8B0000; /* Warna lebih gelap saat hover */
+    transform: scale(1.1); /* Efek membesar */
+}
+
+.scroll-top-btn i {
+    transition: transform 0.3s;
+}
+
+.scroll-top-btn:hover i {
+    transform: translateY(-2px); /* Efek naik sedikit saat hover */
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 768px) { /* Mobile */
+    .scroll-top-btn {
+        bottom: 95px; /* Naik lebih tinggi supaya nggak ketimpa */
+        right: 26px; /* Biar lebih rapi di mobile */
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about {
+        bottom: 30px; /* Naik sedikit agar tidak ketimpa */
+        right: 30px;  /* Geser lebih ke kanan */
+    }
+
+    .contact {
+        bottom: -20px; /* Sesuaikan biar rapi */
+        right: 30px;
+    }
+}
+
+/* Saat layar lebih kecil dari 768px (Mobile) */
+@media screen and (max-width: 768px) {
+    .floating-container {
+        bottom: 35px;  /* Naik agar tidak ketimpa elemen lain */
+        right: 20px;   /* Geser lebih dekat ke tepi */
+    }
+}
