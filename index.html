@@ -36,7 +36,7 @@
               <!-- Navigasi Desktop -->
               <nav class="hidden md:block">
                   <ul class="inline-flex gap-4 text-sm">
-                      <li><a class="menu-item px-5 py-2 rounded-full transition duration-300" href="#"> About </a></li>
+                      <li><a class="menu-item px-5 py-2 rounded-full transition duration-300" href="#"> About Me</a></li>
                       <li><a class="menu-item px-5 py-2 rounded-full transition duration-300" href="#education"> Education </a></li>
                       <li><a class="menu-item px-5 py-2 rounded-full transition duration-300" href="#experience"> Experience </a></li>
                       <li><a class="menu-item px-5 py-2 rounded-full transition duration-300" href="#project"> Projects </a></li>
@@ -59,7 +59,7 @@
               class="hidden md:hidden absolute top-16 left-0 w-full bg-white shadow-lg rounded-b-lg">
               <nav>
                   <ul class="flex flex-col gap-4 p-4 text-sm">
-                      <li><a class="text-gray-700 transition hover:text-red-500" href="#"> About </a></li>
+                      <li><a class="text-gray-700 transition hover:text-red-500" href="#"> About Me</a></li>
                       <li><a class="text-gray-700 transition hover:text-red-500" href="#education"> Education </a></li>
                       <li><a class="text-gray-700 transition hover:text-red-500" href="#experience"> Experience </a></li>
                       <li><a class="text-gray-700 transition hover:text-red-500" href="#project"> Projects </a></li>
@@ -89,18 +89,23 @@
           </p>
     
           <div class="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              class="block w-full rounded-sm bg-red-600 px-12 py-3 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:ring-3 focus:outline-hidden sm:w-auto"
-              href="#"
-            >
-              About Me
-            </a>
-  
+            <a id="openModal" class="about-btn" href="#">About Me</a>
+            <a class="about-btn" href="#">Download CV</a>
+
           </div>
         </div>
       </div>
     </section>
     <!--Content-->
+
+    <!-- Popup Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span id="closeModal" class="close-btn">&times;</span>
+    <h2>About Me</h2>
+    <p>Ini adalah deskripsi tentang saya...</p>
+  </div>
+</div>
     
     <!--Education-->
     <section id="education" class="mindmap-section" style="background-color: #f9f9f9;">
