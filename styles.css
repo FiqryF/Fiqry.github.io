@@ -2,7 +2,7 @@
 
 h1 {
     font-family: 'Bungee Tint', cursive;
-    font-size: 5rem; /* Font lebih besar */
+    font-size: 5rem; 
     font-weight: bold;
     text-align: center;
     color: #0077cc;
@@ -13,19 +13,16 @@ h1 {
     animation: typing 5s steps(30, end) infinite, blink 1s infinite;
 }
 
-/* Animasi Mesin Ketik (Lebih Lambat) */
 @keyframes typing {
     0% { width: 0; }
     50% { width: 100%; }
     100% { width: 0; }
 }
 
-/* Animasi Kedipan Kursor */
 @keyframes blink {
     50% { border-color: transparent; }
 }
 
-/* Efek Fade-in Loop */
 @keyframes fadeMirror {
     0% {
         opacity: 0;
@@ -46,7 +43,6 @@ h1 {
     animation: fadeMirror 10s ease-in-out infinite alternate;
 }
 
-/* Import Font Google */
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 /* Styling Umum */
